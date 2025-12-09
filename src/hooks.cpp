@@ -212,7 +212,7 @@ void hooks::initialise()
 
 void hooks::shutdown()
 {
-	for (int i = 0; i < maxHooks; i++)
+	for (int i{}; i < maxHooks; i++)
 		m_hooks[i].unhook();
 
 	MH_Uninitialize();

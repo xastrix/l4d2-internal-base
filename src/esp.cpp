@@ -108,7 +108,7 @@ void esp::draw_player_health(int index, c_terror_player* entity)
 			}
 			}
 
-			for (int i = 0; i < 9; i++)
+			for (int i{}; i < 9; i++)
 				g_renderer.draw_line(bbox.x - 5, bbox.y + i * ((bbox.h + 1) / 9.0f) - 1.0f, bbox.x - 3,
 					bbox.y + i * ((bbox.h + 1) / 9.0f) - 1.0f, 0.0f, outline_col);
 		}

@@ -23,7 +23,7 @@ std::string util::xor_encrypt_decrypt(const std::string& data, const std::string
 {
 	std::string result{ data };
 
-	for (int i = 0; i < data.size(); i++) {
+	for (int i{}; i < data.size(); i++) {
 		result[i] = data[i] ^ key[i % key.size()];
 	}
 

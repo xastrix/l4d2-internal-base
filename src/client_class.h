@@ -1,7 +1,6 @@
 #pragma once
 
-enum _class_id
-{
+enum _class_id {
 	CAI_BaseNPC,
 	CAssaultRifle,
 	CAutoShotgun,

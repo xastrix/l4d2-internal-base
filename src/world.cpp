@@ -96,7 +96,7 @@ void visuals::render()
 	if (!g_l4d2.get_local())
 		return;
 
-	for (int i = 0; i < g_l4d2.m_entity_list->get_highest_entity_index(); i++)
+	for (int i{}; i < g_l4d2.m_entity_list->get_highest_entity_index(); i++)
 	{
 		auto entity = g_l4d2.m_entity_list->get<c_base_entity*>(i);
 

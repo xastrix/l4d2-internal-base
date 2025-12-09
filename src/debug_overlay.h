@@ -7,6 +7,10 @@
 
 class c_debug_overlay {
 public:
+	/*
+	* IDebugOverlay::ScreenPosition(vec3, vec3)
+	* Get screen pos.
+	*/
 	bool screen_position(const vec3& in, vec3& out) {
 		return mem::call_virtual_fn<bool, 12>(this, in, out);
 	}

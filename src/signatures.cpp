@@ -52,7 +52,7 @@ sig_t signatures::scan_sig(const std::string& module_name, const std::string& si
 
 	const auto sz_img = nt_headers->OptionalHeader.SizeOfImage;
 
-	for (int i = 0; i < sz_img - sz; i++) {
+	for (int i{}; i < sz_img - sz; i++) {
 		auto found = true;
 
 		for (auto j = 0; j < sz; ++j) {

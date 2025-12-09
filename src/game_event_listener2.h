@@ -4,16 +4,28 @@
 
 class c_game_event {
 public:
+	/*
+	* IGameEvent::GetName()
+	* Get name.
+	*/
 	const char* get_name() {
 		using original_fn = const char*(__thiscall*)(c_game_event*);
 		return (*(original_fn**)this)[1](this);
 	}
 
+	/*
+	* IGameEvent::GetInt(string, int)
+	* Get integer value.
+	*/
 	int get_int(const char* name = nullptr, int def = 0) {
 		using original_fn = int(__thiscall*)(c_game_event*, const char*, int);
 		return (*(original_fn**)this)[6](this, name, def);
 	}
 
+	/*
+	* IGameEvent::GetString(string, string)
+	* Get string value.
+	*/
 	const char* get_string(const char* name = nullptr, const char* def = "") {
 		using original_fn = const char*(__thiscall*)(c_game_event*, const char*, const char*);
 		return (*(original_fn**)this)[9](this, name, def);

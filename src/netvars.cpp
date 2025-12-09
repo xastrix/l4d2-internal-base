@@ -62,7 +62,7 @@ static void add_props_for_table(
 	recv_table_t* table,
 	const size_t child_offset
 ) {
-	for (int i = 0; i < table->m_props_num; i++) {
+	for (int i{}; i < table->m_props_num; i++) {
 		auto& prop = table->m_props[i];
 
 		auto name = std::string{ prop.m_var_name };
