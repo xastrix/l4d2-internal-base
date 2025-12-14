@@ -5,6 +5,8 @@
 #include "math.h"
 #include "signatures.h"
 
+#include "checksum_md5.h"
+
 static long(D3DAPI *o_present)(IDirect3DDevice9*, RECT*, RECT*, HWND, RGNDATA*);
 static std::once_flag init_present_stuff{};
 static long D3DAPI present_h(IDirect3DDevice9* device, RECT* source_rect, RECT* dest_rect, HWND dest_window_override, RGNDATA* dirty_region)
@@ -70,6 +72,9 @@ static bool __stdcall create_move_h(float input_sample_frametime, user_cmd_t* cm
 
 	// init local player
 	g_l4d2.init_local({ g_l4d2.m_entity_list->get<c_base_player*>(g_l4d2.m_engine->get_local_player()) });
+
+	// update random seed
+	cmd->random_seed = MD5_PseudoRandom(cmd->command_number) & 0x7fffffff;
 
 	if ((g::initialised && !g::done))
 	{
@@ -191,22 +196,22 @@ void hooks::initialise()
 {
 	MH_Initialize();
 
-	m_hooks[HK_PRESENT].hook<IDirect3DDevice9, PRESENT_FN_INDEX>(g_l4d2.m_device,
+	m_hooks[HK_PRESENT].hook<IDirect3DDevice9*, PRESENT_FN_INDEX>(g_l4d2.m_device,
 		present_h, reinterpret_cast<void**>(&o_present));
 
-	m_hooks[HK_RESET].hook<IDirect3DDevice9, RESET_FN_INDEX>(g_l4d2.m_device,
+	m_hooks[HK_RESET].hook<IDirect3DDevice9*, RESET_FN_INDEX>(g_l4d2.m_device,
 		reset_h, reinterpret_cast<void**>(&o_reset));
 
-	m_hooks[HK_CREATEMOVE].hook<c_client_mode, CREATE_MOVE_FN_INDEX>(g_l4d2.m_client_mode,
+	m_hooks[HK_CREATEMOVE].hook<c_client_mode*, CREATE_MOVE_FN_INDEX>(g_l4d2.m_client_mode,
 		create_move_h, reinterpret_cast<void**>(&o_create_move));
 
-	m_hooks[HK_PAINTTRAVERSE].hook<c_vgui_panel, PAINT_TRAVERSE_FN_INDEX>(g_l4d2.m_panel,
+	m_hooks[HK_PAINTTRAVERSE].hook<c_vgui_panel*, PAINT_TRAVERSE_FN_INDEX>(g_l4d2.m_panel,
 		paint_traverse_h, reinterpret_cast<void**>(&o_paint_traverse));
 
-	m_hooks[HK_GETSCREENASPECTRATIO].hook<c_engine_client, GET_SCREEN_ASPECT_RATIO_FN_INDEX>(g_l4d2.m_engine,
+	m_hooks[HK_GETSCREENASPECTRATIO].hook<c_engine_client*, GET_SCREEN_ASPECT_RATIO_FN_INDEX>(g_l4d2.m_engine,
 		get_screen_aspect_ratio_h, reinterpret_cast<void**>(&o_get_screen_aspect_ratio));
 
-	m_hooks[HK_ISGAMEPAUSED].hook<c_engine_client, IS_GAME_PAUSED_FN_INDEX>(g_l4d2.m_engine,
+	m_hooks[HK_ISGAMEPAUSED].hook<c_engine_client*, IS_GAME_PAUSED_FN_INDEX>(g_l4d2.m_engine,
 		is_game_paused_h, reinterpret_cast<void**>(&o_is_game_paused));
 }
 

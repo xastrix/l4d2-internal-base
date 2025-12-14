@@ -26,7 +26,7 @@ struct hook_t {
 
 		m_index = index;
 		m_addr = addr;
-		m_src = mem::get_virtual_fn<T*>(m_addr, m_index);
+		m_src = mem::get_virtual_fn<T>(m_addr, m_index);
 		m_target = target;
 		m_orig = orig;
 
