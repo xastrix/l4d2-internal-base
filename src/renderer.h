@@ -86,8 +86,11 @@ private:
 
 struct renderer {
 	bool initialise(IDirect3DDevice9* device);
+	
+	// Create objects (device, viewport, stateblock)
 	bool create_objects(IDirect3DDevice9* device);
 
+	// Set up render states
 	void begin_modificated_states();
 
 	void draw_line(float x0, float y0, float x1, float y1, float thickness, color_t color);
@@ -95,6 +98,7 @@ struct renderer {
 	void draw_rect(float x, float y, float w, float h, color_t color);
 	void draw_corner_box(float x, float y, float w, float h, float cx, float cy, color_t color);
 
+	// End render states
 	void end_modificated_states();
 
 	void shutdown();

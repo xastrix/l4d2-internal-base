@@ -11,6 +11,7 @@ struct esp {
 
 private:
 	void calc_player_animation_progress(int index, float& anim, c_terror_player* entity);
+
 	void update_position(int index, const vec3& pos);
 	void reset_position(int index);
 

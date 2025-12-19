@@ -99,7 +99,7 @@ struct hook_t {
 		case RESET_FN_INDEX:
 			return "Reset";
 		case GET_SCREEN_ASPECT_RATIO_FN_INDEX:
-			return "Get aspect ratio";
+			return "Get screen aspect ratio";
 		case IS_GAME_PAUSED_FN_INDEX:
 			return "Is game paused";
 		}

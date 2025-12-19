@@ -38,7 +38,7 @@ bool __stdcall DllMain(const HMODULE instance, const int32_t reason, void*)
 
 #ifdef _DEBUG
 			// init console for debugging
-			g_console.initialise();
+			console::initialise();
 #endif
 
 			// init font loader with pointer to font list
@@ -142,7 +142,7 @@ bool __stdcall DllMain(const HMODULE instance, const int32_t reason, void*)
 
 #ifdef _DEBUG
 		// uninit console
-		g_console.shutdown();
+		console::shutdown();
 #endif
 	});
 

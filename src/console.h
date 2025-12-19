@@ -1,8 +1,7 @@
 #pragma once
 
-struct console {
+namespace console
+{
 	void initialise();
 	void shutdown();
-};
-
-inline console g_console{};
+}

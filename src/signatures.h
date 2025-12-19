@@ -14,9 +14,12 @@ using sig_t = uint8_t*;
 
 struct signatures {
 	void initialise();
+
+	// Get signature by index
 	sig_t get_sig(_signature_list index);
 
 private:
+	// Scan signature by pattern
 	sig_t scan_sig(const std::string& module_name, const std::string& signature);
 
 private:

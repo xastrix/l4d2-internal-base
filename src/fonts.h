@@ -9,7 +9,7 @@
 
 enum _font_list {
 	Tahoma12px,
-	left4dead_icons21px,
+	Left4Dead_Icons21px,
 	maxFonts,
 };
 
@@ -84,11 +84,16 @@ private:
 struct fonts {
 	void initialise(IDirect3DDevice9* device, const std::vector<font_t> list);
 
+	// Print text function
 	void draw_text(const std::string& string, int x, int y, _font_list font, uint8_t flags, color_t color = color_t{ 255, 255, 255 });
-
+	
+	// Get width
 	int get_text_width(_font_list font, const std::string& string);
+	
+	// Get height
 	int get_text_height(_font_list font, const std::string& string);
 
+	// Get font by index
 	ID3DXFont* get_font(_font_list index);
 
 	void shutdown();

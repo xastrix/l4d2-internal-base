@@ -64,17 +64,8 @@
     <Filter Include="sdk\interfaces">
       <UniqueIdentifier>{a1623895-3a86-4b26-b01a-fa76fc5da603}</UniqueIdentifier>
     </Filter>
-    <Filter Include="tests">
-      <UniqueIdentifier>{cda6dec1-d580-4962-9d18-6455ea422677}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tests\ui">
-      <UniqueIdentifier>{fc3081f6-d0e5-4113-8f12-3181e01d00c2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="sdk\vgui">
       <UniqueIdentifier>{5512dcb1-f6ce-44ee-bdd2-c83eca7f0348}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tests\visual">
-      <UniqueIdentifier>{e88b4320-6feb-4081-9ac3-9ecf760c3ef1}</UniqueIdentifier>
     </Filter>
     <Filter Include="sdk\structs">
       <UniqueIdentifier>{9461989d-eeac-48cd-b6d1-fb84b919d98b}</UniqueIdentifier>
@@ -99,6 +90,12 @@
     </Filter>
     <Filter Include="sdk\models">
       <UniqueIdentifier>{4a42d835-3580-420a-b396-43b53aafee80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="visuals">
+      <UniqueIdentifier>{e88b4320-6feb-4081-9ac3-9ecf760c3ef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{fc3081f6-d0e5-4113-8f12-3181e01d00c2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -237,16 +234,16 @@
       <Filter>sdk\engine</Filter>
     </ClInclude>
     <ClInclude Include="..\src\ui.h">
-      <Filter>tests\ui</Filter>
+      <Filter>ui</Filter>
     </ClInclude>
     <ClInclude Include="..\src\vgui_surface.h">
       <Filter>sdk\vgui</Filter>
     </ClInclude>
     <ClInclude Include="..\src\world.h">
-      <Filter>tests\visual</Filter>
+      <Filter>visuals</Filter>
     </ClInclude>
     <ClInclude Include="..\src\esp.h">
-      <Filter>tests\visual</Filter>
+      <Filter>visuals</Filter>
     </ClInclude>
     <ClInclude Include="..\src\user_cmd.h">
       <Filter>sdk\structs</Filter>
@@ -297,7 +294,7 @@
       <Filter>sdk\events</Filter>
     </ClInclude>
     <ClInclude Include="..\src\ui_imgui.h">
-      <Filter>tests\ui</Filter>
+      <Filter>ui</Filter>
     </ClInclude>
     <ClInclude Include="..\src\model_info.h">
       <Filter>sdk\models</Filter>
@@ -402,7 +399,7 @@
       <Filter>sdk\engine</Filter>
     </ClCompile>
     <ClCompile Include="..\src\ui.cpp">
-      <Filter>tests\ui</Filter>
+      <Filter>ui</Filter>
     </ClCompile>
     <ClCompile Include="..\src\vgui_surface.cpp">
       <Filter>sdk\vgui</Filter>
@@ -414,10 +411,10 @@
       <Filter>sdk\entity</Filter>
     </ClCompile>
     <ClCompile Include="..\src\world.cpp">
-      <Filter>tests\visual</Filter>
+      <Filter>visuals</Filter>
     </ClCompile>
     <ClCompile Include="..\src\esp.cpp">
-      <Filter>tests\visual</Filter>
+      <Filter>visuals</Filter>
     </ClCompile>
     <ClCompile Include="..\src\achievement_mgr.cpp">
       <Filter>sdk\engine</Filter>

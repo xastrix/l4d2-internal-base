@@ -15,7 +15,7 @@ static long D3DAPI present_h(IDirect3DDevice9* device, RECT* source_rect, RECT* 
 	{
 		g_fonts.initialise(device, {
 			{ Tahoma12px,          12, "Tahoma",          FW_MEDIUM, ANTIALIASED_QUALITY },
-			{ left4dead_icons21px, 21, "left4dead_icons", FW_NORMAL, CLEARTYPE_QUALITY },
+			{ Left4Dead_Icons21px, 21, "left4dead_icons", FW_NORMAL, CLEARTYPE_QUALITY },
 		});
 
 		g_renderer.initialise(device);

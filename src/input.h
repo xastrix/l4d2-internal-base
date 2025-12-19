@@ -34,16 +34,28 @@ private:
 
 struct input : public mouse_t {
 	void initialise(const std::pair<LPCSTR, LPCSTR>& wnd_data);
+	
+	// Set function on hotkey press
 	void on_hotkey(unsigned int vk, std::function<void()> fn);
 
 	void process_message(UINT m, WPARAM w, LPARAM l);
+
+	// Trace mouse messages
 	void process_mouse_message(UINT m, WPARAM w, LPARAM l);
+
+	// Trace keyboard messages
 	void process_keybd_message(UINT m, WPARAM w);
 
+	// Convert virtual key to string
 	std::string virtual_key_to_wstring(unsigned int vk);
+
+	// Get current key state
 	_button_state get_key_state(unsigned int vk);
 
+	// Get window
 	HWND get_window();
+
+	// Get original wndproc
 	WNDPROC get_wndproc();
 
 	void shutdown();

@@ -175,7 +175,7 @@ void visuals::draw_spawn_objects(c_base_entity* entity)
 	}
 	case 1: {
 		g_fonts.draw_text(weapon_icon_list[weapon->get_weapon_id()],
-			pos.x, pos.y, left4dead_icons21px, TEXT_OUTLINE | TEXT_CENTER_X, col);
+			pos.x, pos.y, Left4Dead_Icons21px, TEXT_OUTLINE | TEXT_CENTER_X, col);
 		break;
 	}
 	}

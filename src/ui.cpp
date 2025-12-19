@@ -57,6 +57,7 @@ void ui::render()
 		ImGui::PushStyleColor(ImGuiCol_TitleBgActive, ImVec4(0.16f, 0.29f, 0.48f, 1.00f));
 		ImGui::PushStyleColor(ImGuiCol_SliderGrab, ImVec4(0.35f, 0.35f, 0.35f, 1.00f));
 		ImGui::PushStyleColor(ImGuiCol_SliderGrabActive, ImVec4(0.41f, 0.41f, 0.41f, 1.00f));
+		ImGui::PushStyleColor(ImGuiCol_TextSelectedBg, ImVec4(0.26f, 0.25f, 0.25f, 1.00f));
 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
 		ImGui::PushStyleVar(ImGuiStyleVar_PopupBorderSize, 0.0f);
@@ -72,7 +73,7 @@ void ui::render()
 		draw_watermark();
 
 		ImGui::PopStyleVar(7);
-		ImGui::PopStyleColor(19);
+		ImGui::PopStyleColor(20);
 	}
 	ImGui::EndFrame();
 
